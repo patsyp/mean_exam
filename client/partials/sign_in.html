@@ -1,0 +1,7 @@
+<h2>Q&A</h2>
+
+<form ng-submit = 'UC.create(UC.newUser)'>
+	<label>Name: <input type="text" ng-model = 'UC.newUser.name'></label>
+	<input type="submit" value = 'Enter'>
+	<p ng-repeat = 'error in UC.reg_errors'>{{error}}</p>
+</form>

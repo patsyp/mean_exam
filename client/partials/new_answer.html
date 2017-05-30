@@ -1,0 +1,17 @@
+
+	<a href="" ng-click = 'UC.logout()'>Logout</a>
+	<a href="#!/dashboard">Home</a>
+	
+<div ng-controller='QuestionsController as QC' ng-init = 'QC.show()'>
+<a href="#!/question/show/{{QC.question._id}}">Go back to question</a>
+	<h2 ng-init = 'index = $index'>{{QC.question.question}}</h2>
+	<h3>{{QC.question.description}}</h3>
+	<form ng-submit='QC.createAnswer(QC.newAnswer, index, QC.question._id)'>
+		<label>Your Answer:</label>
+		<textarea ng-model='QC.newAnswer[index].answer'></textarea>
+		<label>Supporting details for your answer (optional)</label>
+		<textarea ng-model = 'QC.newAnswer[index].description'></textarea>
+		<input type="submit" value = "Submit">
+		<p ng-repeat = 'error in QC.answer_errors'>{{error}}</p>
+	</form>
+</div>

@@ -1,0 +1,15 @@
+<a href="" ng-click = 'UC.logout()'>Logout</a>
+<a href="#!/dashboard">Home</a>
+<h1>New Question</h1>
+
+<div ng-controller = 'QuestionsController as QC'>
+<form ng-submit = 'QC.create(QC.newQuestion)'>
+	<label>Question</label>
+	<textarea ng-model = QC.newQuestion.question></textarea>
+	<label>Description (optional)</label>
+	<textarea ng-model = QC.newQuestion.description></textarea>
+
+	<input type="submit" value = "Submit">
+	<p ng-repeat='error in QC.new_question_errors'>{{error}}</p>
+</form>
+</div>
